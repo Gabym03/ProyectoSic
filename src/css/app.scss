@@ -1,0 +1,26 @@
+// app global css in SCSS form
+.bckg {
+  background-color: $primary;
+}
+.App {
+  text-align: center;
+}
+
+.logo {
+  height: 40vmin;
+  pointer-events: none;
+  border-radius: 50%;
+}
+.button {
+  font-size: 18px; /* Ajusta el tamaño del texto */
+  padding: 12px 20px; /* Ajusta el relleno (padding) para aumentar el tamaño del botón */
+  border-radius: 8px; /* Ajusta el radio de las esquinas si lo deseas */
+  background-color: black; /* Ajusta el color de fondo del botón */
+  color: #ffffff; /* Ajusta el color del texto del botón */
+  border: none; /* Elimina el borde para un aspecto más limpio */
+  cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+}
+
+button:hover {
+  background-color: #083a97;
+}
