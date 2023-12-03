@@ -10,6 +10,7 @@
   height: 40vmin;
   pointer-events: none;
   border-radius: 50%;
+  margin-top: 50px;
 }
 .button {
   font-size: 18px; /* Ajusta el tamaño del texto */
@@ -23,4 +24,29 @@
 
 button:hover {
   background-color: #083a97;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Ajusta la altura según tus necesidades */
+}
+
+.side {
+  width: 50%;
+  text-align: center;
+  padding: 20px;
+  box-sizing: border-box; /* Asegura que el relleno no incremente el tamaño total */
+}
+
+.left-side {
+  background-color: $primary; /* Color de fondo para el lado izquierdo */
+}
+
+.right-side {
+  width: 50%;
+}
+.login-title {
+  margin-bottom: 20px;
 }

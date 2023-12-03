@@ -1,11 +1,11 @@
 const routes = [
   {
-    path: "/login",
+    path: "/",
     component: () => import("layouts/AuthLayout.vue"),
     children: [{ path: "", component: () => import("pages/LoginPage.vue") }],
   },
   {
-    path: "/",
+    path: "/inicio",
     component: () => import("layouts/PrincipalLayout.vue"),
     children: [{ path: "", component: () => import("pages/InicioPage.vue") }],
   },
@@ -40,6 +40,46 @@ const routes = [
     path: "/reportes",
     component: () => import("layouts/PrincipalLayout.vue"),
     children: [{ path: "", component: () => import("pages/ReportesPage.vue") }],
+  },
+  {
+    path: "/estRes",
+    component: () => import("layouts/PrincipalLayout.vue"),
+    children: [
+      { path: "", component: () => import("pages/EstadoResultado.vue") },
+    ],
+  },
+  {
+    path: "/estCapital",
+    component: () => import("layouts/PrincipalLayout.vue"),
+    children: [
+      { path: "", component: () => import("pages/CapitalContable.vue") },
+    ],
+  },
+  {
+    path: "/balance",
+    component: () => import("layouts/PrincipalLayout.vue"),
+    children: [
+      { path: "", component: () => import("pages/BalanceGeneral.vue") },
+    ],
+  },
+  {
+    path: "/estFlujo",
+    component: () => import("layouts/PrincipalLayout.vue"),
+    children: [{ path: "", component: () => import("pages/EstadoFlujo.vue") }],
+  },
+  {
+    path: "/estClientes",
+    component: () => import("layouts/PrincipalLayout.vue"),
+    children: [
+      { path: "", component: () => import("pages/EstadoCliente.vue") },
+    ],
+  },
+  {
+    path: "/estProv",
+    component: () => import("layouts/PrincipalLayout.vue"),
+    children: [
+      { path: "", component: () => import("pages/EstadoProveedores.vue") },
+    ],
   },
 
   // Always leave this as last one,
