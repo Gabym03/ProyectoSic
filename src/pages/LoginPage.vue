@@ -23,10 +23,12 @@
 import { ref } from "vue";
 import { auth, provider } from "src/boot/firebase";
 import { signInWithRedirect, getRedirectResult } from "firebase/auth";
-const cerrarSesion = () => {
-  $router.push("/");
-};
+import { useRouter } from "vue-router";
+
+const router = useRouter();
+
 function iniciarSesion() {
   signInWithRedirect(auth, provider);
+  router.push("/");
 }
 </script>

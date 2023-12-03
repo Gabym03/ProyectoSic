@@ -20,31 +20,31 @@
           style="margin-left: 20px"
         />
         <q-route-tab
-          to="/page2"
+          to="/compras"
           icon="shopping_bag"
           label="Compras"
           style="margin-left: 20px"
         />
         <q-route-tab
-          to="/page3"
+          to="/ventas"
           icon="paid"
           label="Ventas"
           style="margin-left: 20px"
         />
         <q-route-tab
-          to="/page3"
+          to="/inventario"
           icon="inventory"
           label="Inventario"
           style="margin-left: 20px"
         />
         <q-route-tab
-          to="/page3"
+          to="/librodiario"
           icon="auto_stories"
           label="Libro Diario"
           style="margin-left: 20px"
         />
         <q-route-tab
-          to="/page3"
+          to="/reportes"
           icon="feed"
           label="Reportes"
           style="margin-left: 20px"

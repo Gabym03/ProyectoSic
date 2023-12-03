@@ -13,7 +13,7 @@
     />
 
     <q-btn
-      style="margin-top: 100px; margin-left: 90px"
+      style="margin-top: 100px; margin-left: 190px"
       @click="agregarCuenta"
       label="Agregar Cuenta"
       color="primary"
@@ -65,7 +65,6 @@ const columns = ref([
     field: "nombre",
     sortable: true,
   },
-  { name: "tipo", label: "Tipo", align: "left", field: "tipo", sortable: true },
 ]);
 
 const cuentas = ref([
