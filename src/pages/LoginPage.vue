@@ -60,9 +60,9 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { onMounted, ref } from "vue";
 import { auth, provider } from "src/boot/firebase";
-import { signInWithRedirect, getRedirectResult } from "firebase/auth";
+import { signInWithRedirect, getRedirectResult, signOut } from "firebase/auth";
 import { useRouter } from "vue-router";
 
 const router = useRouter();
@@ -77,4 +77,19 @@ function iniciarSesion() {
   signInWithRedirect(auth, provider);
   router.push("/inicio");
 }
+
+onMounted(() => {
+  if (auth.currentUser) {
+    usuario.value = auth.currentUser;
+  }
+  getRedirectResult(auth)
+    .then((result) => {
+      const user = result.user;
+      console.log(user);
+      usuario.value = user;
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+});
 </script>

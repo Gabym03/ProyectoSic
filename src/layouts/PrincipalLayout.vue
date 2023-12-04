@@ -66,6 +66,7 @@
                 push
                 size="sm"
                 v-close-popup
+                @click="cerrarSesion"
               />
             </div>
           </div>
@@ -87,7 +88,24 @@
   </q-layout>
 </template>
 <script setup>
-import { ref } from "vue";
+import { ref, onMounted } from "vue";
+import { auth, provider } from "src/boot/firebase";
+import { signInWithRedirect, getRedirectResult, signOut } from "firebase/auth";
+import { useRoute, useRouter } from "vue-router";
+const router = useRouter();
+const usuario = ref(null);
+const cerrarSesion = () => {
+  signOut(auth)
+    .then(() => {
+      // Sign-out successful.
+      //auth.currentUser = null;
+      router.push("/");
+    })
+    .catch((error) => {
+      // An error happened.
+      console.log(error);
+    });
+};
 
 const user = ref("Gaby");
 </script>
