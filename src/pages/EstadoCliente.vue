@@ -25,57 +25,23 @@ import { collection, addDoc, getDocs } from "firebase/firestore";
 import { db } from "boot/firebase";
 import { useRouter } from "vue-router";
 const router = useRouter();
-const columns = ref([
+const data = useCollection(collection(db, "Cliente"));
+const columns = [
   {
-    name: "factura",
-    label: "Factura",
+    name: "Cliente",
     align: "left",
-    field: "factura",
+    label: "Cliente",
+    field: "nombret",
     sortable: true,
   },
   {
-    name: "fecha",
-    label: "Fecha",
+    name: "Código del Cliente",
     align: "left",
-    field: "fecha",
+    label: "Código del Cliente",
+    field: "codigot",
     sortable: true,
   },
-  {
-    name: "proveedor",
-    label: "Proveedor",
-    align: "left",
-    field: "proveedor",
-    sortable: true,
-  },
-  {
-    name: "concepto",
-    label: "Concepto",
-    align: "left",
-    field: "concepto",
-    sortable: true,
-  },
-  {
-    name: "preciou",
-    label: "Precio Unitario",
-    align: "left",
-    field: "preciou",
-    sortable: true,
-  },
-  {
-    name: "cantidad",
-    label: "Cantidad",
-    align: "left",
-    field: "cantidad",
-    sortable: true,
-  },
-  {
-    name: "total",
-    label: "Total",
-    align: "left",
-    field: "total",
-    sortable: true,
-  },
-]);
+];
 function regresar() {
   router.push("/reportes");
 }

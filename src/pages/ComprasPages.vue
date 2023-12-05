@@ -48,6 +48,7 @@ import { useCollection } from "vuefire";
 import { collection, addDoc, getDocs } from "firebase/firestore";
 import { db } from "boot/firebase";
 
+const data = useCollection(collection(db, "Proveedor"));
 const columns = ref([
   {
     name: "factura",
@@ -64,10 +65,10 @@ const columns = ref([
     sortable: true,
   },
   {
-    name: "proveedor",
+    name: "nombret",
     label: "Proveedor",
     align: "left",
-    field: "proveedor",
+    field: "nombret",
     sortable: true,
   },
   {

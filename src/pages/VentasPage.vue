@@ -47,7 +47,7 @@ import swal from "sweetalert";
 import { useCollection } from "vuefire";
 import { collection, addDoc, getDocs } from "firebase/firestore";
 import { db } from "boot/firebase";
-
+const data = useCollection(collection(db, "Cliente"));
 const columns = ref([
   {
     name: "factura",
@@ -64,10 +64,10 @@ const columns = ref([
     sortable: true,
   },
   {
-    name: "cliente",
+    name: "nombret",
     label: "Cliente",
     align: "left",
-    field: "cliente",
+    field: "nombret",
     sortable: true,
   },
   {
@@ -79,7 +79,7 @@ const columns = ref([
   },
   {
     name: "preciou",
-    label: "Precio Unitario",
+    label: "Precio Venta",
     align: "left",
     field: "preciou",
     sortable: true,

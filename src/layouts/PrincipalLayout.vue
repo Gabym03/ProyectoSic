@@ -8,7 +8,7 @@
     >
       <q-tabs align="left" style="margin-left: 50px">
         <q-route-tab
-          to="/"
+          to="/inicio"
           icon="home"
           label="Inicio"
           style="margin-left: 30px"
@@ -17,6 +17,12 @@
           to="/catalogo"
           icon="list_alt"
           label="Catalogo"
+          style="margin-left: 20px"
+        />
+        <q-route-tab
+          to="/transaciones"
+          icon="currency_exchange"
+          label="Transaciones"
           style="margin-left: 20px"
         />
         <q-route-tab
@@ -43,6 +49,7 @@
           label="Libro Diario"
           style="margin-left: 20px"
         />
+
         <q-route-tab
           to="/reportes"
           icon="feed"
@@ -55,7 +62,7 @@
           <div class="row no-wrap q-pa-md">
             <div class="column items-center">
               <q-avatar size="72px">
-                <img src="https://cdn.quasar.dev/img/boy-avatar.png" />
+                <img src="/src/images/user.jpg" />
               </q-avatar>
 
               <div class="text-subtitle1 q-mt-md q-mb-xs">{{ user }}</div>
@@ -81,7 +88,7 @@
     <q-footer elevated class="bg-grey-8 text-white">
       <q-toolbar>
         <q-toolbar-title>
-          <div>Title</div>
+          <div>Gabriela Michelle Martiez Gomez - MG21054</div>
         </q-toolbar-title>
       </q-toolbar>
     </q-footer>
@@ -93,7 +100,7 @@ import { auth, provider } from "src/boot/firebase";
 import { signInWithRedirect, getRedirectResult, signOut } from "firebase/auth";
 import { useRoute, useRouter } from "vue-router";
 const router = useRouter();
-const usuario = ref(null);
+const usuario = ref("");
 const cerrarSesion = () => {
   signOut(auth)
     .then(() => {
@@ -106,6 +113,18 @@ const cerrarSesion = () => {
       console.log(error);
     });
 };
-
-const user = ref("Gaby");
+onMounted(() => {
+  if (auth.currentUser) {
+    usuario.value = auth.currentUser;
+  }
+  getRedirectResult(auth)
+    .then((result) => {
+      const user = result.user;
+      console.log(user);
+      usuario.value = user;
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+});
 </script>

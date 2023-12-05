@@ -13,9 +13,9 @@
           <q-card
             class="q-mb-md efect restarjeta change-color"
             style="
-              background-color: #cee5ef;
+              background-color: #124a8ad0;
               cursor: pointer;
-              border: 4px solid #0b3668;
+              border: 4px solid #1976d2;
             "
             @click="funcionParaRedirigir(datos.link)"
           >
@@ -26,10 +26,10 @@
                 height: 30vh;
                 object-fit: cover;
                 font-size: 200px;
-                color: #0b3668;
+                color: white;
               "
             />
-            <div class="absolute-bottom text-h6" style="color: #0b3668">
+            <div class="absolute-bottom text-h6" style="color: white">
               {{ datos.titulo }}
             </div>
           </q-card>

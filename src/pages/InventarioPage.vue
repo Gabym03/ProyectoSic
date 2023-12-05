@@ -47,27 +47,27 @@ import swal from "sweetalert";
 import { useCollection } from "vuefire";
 import { collection, addDoc, getDocs } from "firebase/firestore";
 import { db } from "boot/firebase";
-
+const data = useCollection(collection(db, "Proveedor"));
 const columns = ref([
   {
-    name: "codigoArticulo",
+    name: "codigop",
     label: "C/Articulo",
     align: "left",
-    field: "codigoArticulo",
+    field: "codigop",
     sortable: true,
   },
   {
-    name: "nombre",
+    name: "nombrep",
     label: "Nombre",
     align: "left",
-    field: "nombre",
+    field: "nombrep",
     sortable: true,
   },
   {
-    name: "existencia",
+    name: "cantidad",
     label: "Existencia",
     align: "left",
-    field: "existencia",
+    field: "cantidad",
     sortable: true,
   },
 
@@ -80,10 +80,10 @@ const columns = ref([
   },
 
   {
-    name: "proveedor",
+    name: "nombret",
     label: "Proveedor",
     align: "left",
-    field: "proveedor",
+    field: "nombret",
     sortable: true,
   },
 ]);

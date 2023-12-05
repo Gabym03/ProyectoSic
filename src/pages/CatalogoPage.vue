@@ -99,7 +99,14 @@ const customRowClass = (row) => {
 const cuentas = ref([
   // ... otras cuentas
 ]);
-const tiposDeCuenta = ref(["Ingreso", "Gasto", "Activo", "Pasivo"]);
+const tiposDeCuenta = ref([
+  "Activo",
+  "Pasivo",
+  "Patrimonio",
+  "Gastos",
+  "Ingresos",
+  "Cuenta de cierre",
+]);
 
 const cuentaActual = reactive({ codigo: "", nombre: "", tipo: "" });
 const mostrarFormulario = ref(false);

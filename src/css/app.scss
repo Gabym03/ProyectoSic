@@ -53,11 +53,18 @@ button:hover {
 .librod {
   background-color: $primary;
   width: 80%;
-  margin-top: 50px;
+
+  margin-top: 60px;
+
+  margin-left: auto;
+  margin-right: auto;
   justify-content: center;
   text-align: center;
   margin-left: auto;
   margin-right: auto;
   border-radius: 0%;
   display: flex;
+}
+.q-checkbox__bg {
+  color: rgb(14, 14, 153);
 }
